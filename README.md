@@ -8,11 +8,11 @@ This is a minimalistic python app to serve semi-static pages based on [flask][],
 * [psycopg2][] (at the moment) as database backend
 
 `database.py` provides a minimalistic PostgreSQL database backend to store form values, (the default form POST names are `firstname`, `lastname`, `town`, `publicvisible (bool)`, `campaign_info (bool)` and `emailaddress`)
-Additionally all POST values are also seperately stored in JSON format to allow aditional form elements without changing the database structure.
+Additionally all POST values are also separately stored in JSON format to allow additional form elements without changing the database structure.
 
 # Installing
 ### python virtualenv setup
-We are using a virtual python envoronment to not be forced to install flask globally.
+We are using a virtual python environment to not be forced to install flask globally.
 
 To create a new virtual environment run the following in the root (this) directory:
 ```
@@ -71,7 +71,7 @@ See [Flask's Deployment Options][Flask-deploy].
 
 **Warning:** This is just an example, FastCGI is a real PITA to debug. You most likely don't want to use this. Also, if you change any Python files, you have to restart the CGI server.
 
-`webapp.fcgi` is a FastCGI wrapper for the flask application, which provides a unix socket for the webserver. Most webservers don't start/monitor FastCGI processes automatically, so it has to be run seperately, we used [Supervisor][], but a simple start script / watchdog might also do the job.
+`webapp.fcgi` is a FastCGI wrapper for the flask application, which provides a unix socket for the webserver. Most webservers don't start/monitor FastCGI processes automatically, so it has to be run separately, we used [Supervisor][], but a simple start script / watchdog might also do the job.
 
 ##### nginx example config:
 
@@ -108,6 +108,7 @@ server {
 unless otherwise stated:
 
 **source code:** (basically all .py files) New BSD License (see `LICENSE_sourcecode`)
+
 **Texts, artwork, etc...:** CC BY 3.0 (see `LICENSE_artwork_texts`)
 
 # TODO
