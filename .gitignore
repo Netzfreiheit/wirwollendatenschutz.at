@@ -1,0 +1,5 @@
+*.pyc
+*~
+/venv
+/webapp/settings.py
+/webapp/static/images/meps/

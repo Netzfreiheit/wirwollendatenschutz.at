@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div id="unterstuetzen">
+			<div class="wrp">
+				<div class="average">
+{% if signed %}
+					<h1 class="pagetitle">Danke!</h1>
+					<p class="teaser">Danke, dass Sie die Brüsseler Datenschutz-Erklärung unterzeichnet haben!</p>
+					<a class="dosth" href="/unterstuetzen#contact">&raquo; Kontaktiere deine Abgeordneten</a>
+					<h3 style="margin-top:2em">Öffentliche UnterzeicherInnen</h3>
+{% else %}
+					<h1 class="pagetitle">Öffentliche UnterzeicherInnen der <br> 
+					<a href="./unterstuetzen#declaration">Brüsseler Datenschutz-Erklärung</a></h1>
+{% endif %}
+					<div style="margin:10px;">
+<style type="text/css">
+    #reverse { list-style-type: none }
+ </style>
+					<ol id="reverse">
+{% for supporter in supporters %}
+						<li><b>{{ supporter.firstname }} {{ supporter.lastname }}</b> aus <b>{{ supporter.town }}</b></li>
+{% endfor %}
+					</ol>
+{% if not signed %}
+  <script type="text/javascript">
+    <!--
+      var ol = document.getElementById("reverse");
+      var lis = ol.getElementsByTagName("li");
+      for (var i = 1; i <= lis.length; i++)
+        lis[lis.length-i].value = i;
+      ol.style.listStyleType = "decimal";
+    //-->
+  </script>
+<a href="/unterstuetzen#declaration" class="dosth">Jetzt auch unterstützen!</a>
+{% endif %}
+					</div>
+				</div>
+			</div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div id="home">
+			<div class="wrp">
+				<div class="captext">
+					<div id="captext"></div>
+					<div id="aufruf">Aufgrund von massivem Lobbying seitens Industrie ist der Schutz deiner persönlichen Daten in Zukunft nicht mehr gewährleistet!</div>
+					
+					<a class="dosth" style="float:right;" href="/unterstuetzen">&raquo; Deine Stimme für einen starken Datenschutz</a>
+				</div>
+				<div class="homebg"><img src="/static/images/home.jpg" alt=""></div>
+			</div>
+</div>
+{% endblock %}
+
+{% block script %}
+	<script src="/static/js/jquery.autotype.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	var mtxt = "\n\n\n\n\n\n\n\n\nDein Beziehungsstatus  . . . \nverkauft!      \n\nDeine Adresse  . . . \nverkauft!      \n\nDein Jobsituation  . . . \nverkauft!      \n\nDeine Familiensituation  . . . \nverkauft!      \n\nDeine sexuellen Vorlieben  . . . \nverkauft!      \n\nAlle deine persönlichen Daten  . . . \nverkauft!      \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		, mc = 0
+		, m_delay = 42
+	  , type_text = function () {
+	  		var c = mtxt.charAt(mc);
+	  		if (c === '\n') {
+	  			$('#captext').append('<br/>');	
+	  		}
+
+	  		// set text scroll up
+	    	$('#captext').append(c);
+	    	$('#captext').scrollTop(900);
+	    	mc++;
+
+	    	if (mc < mtxt.length) {
+	    		window.setTimeout(type_text, m_delay)
+	    	}
+	    }
+	;
+
+	$(type_text);
+			
+	</script>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<title>{% block title %}Für einen starken Datenschutz für Europa{% endblock %}</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta property="og:title" content="Ein starker Datenschutz für Europa" />
+	<meta property="og:description" content="Deine persönlichen Daten sind in Gefahr! Hilf mit, den Datenschutz in Europa sicherzustellen!" />
+	<meta property="og:image" content="http://wirwollendatenschutz.at/static/images/socialthumb.jpg" />
+	<meta property="og:url" content="https://wirwollendatenschutz.at/" />
+	<link rel="shortcut icon" type="image/png" href="/static/images/favicon.png" />
+	<link href="/static/css/dp.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	{% block script %}{% endblock %}
+</head>
+<body>
+	<header id="hdr">
+		<div class="wrp">
+			<div id="logo"><a href="/"><img src="{% block logourl %}/static/images/eu-datenschutz-logo.png{% endblock %}" alt="Wir wollen Datenschutz"></a></div>
+			<nav>
+				<ul id="mainnav">
+					<li class="actual"><a href="/">Start</a></li>
+					<li><a href="/positionen">Die Datenschutzreform</a></li>
+					<li><a href="/unterstuetzen">Unterstützen!</a></li>
+					<li><a href="/kontakt">Kontakt</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	<div id="cntnt">
+{% block body %}{% endblock %}
+	</div>
+	
+	<footer>
+		<div class="wrp">
+			<nav> 
+				<ul id="footernav">
+					<li><a href="/">Start</a></li>
+					<li><a href="/positionen">Die Datenschutzreform</a></li>
+					<li><a href="/presse">Presse</a></li>
+					<li><a href="/impressum">Impressum &amp; Credits</a></li>
+				</ul>
+			</nav>
+
+			<div id="credits">
+				<a href="https://netzfreiheit.org" title="Initiative für Netzfreiheit"><img src="/static/images/ifnf-logo-breit.png" alt="Initiative für Netzfreiheit"></a>
+				<a href="https://vibe.at" title="Verein für Internet-Benutzer Österreichs"><img src="/static/images/vibe.png" alt="VIBE.at"></a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
